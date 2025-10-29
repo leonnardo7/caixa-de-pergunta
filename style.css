@@ -1,80 +1,89 @@
+:root {
+    --text-color: #f6faff;
+    --card-front-color: #2b0be0;
+    --card-back-color: #000000;
+}
+
 body {
     background: url("img/bg-desktop.webp");
     font-family: "Roboto Condensed", sans-serif;
 }
+
 footer {
-    background-color: rgb(231, 231, 231);
-    color: rgb(0, 148, 32);
+    background-color: #fff;
+    color: #000;
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 2rem;
-}
-footer {
     text-align: center;
-    font: 0.6rem;
+    font-size: 0.6rem;
     margin-top: 0.5rem;
 }
-#container{
+
+#container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 4rem;
     gap: 3rem;
 }
-.cartao{
-    margin: 1rem 1rem;
-    background-color: aqua;
+
+.cartao {
+    margin: 1rem;
+    background-color: #000;
     height: 75rem;
-    flex-grow: 1 0 calc(100% - 1rem);
-    flex-basis: calc(33%- 6rem);
+    flex: 1 1 calc(33.33% - 6rem);
 }
-.cartao_conteudo{
+
+.cartao_conteudo {
+    position: relative;
     text-align: center;
     background-color: var(--card-front-color);
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 300ms ease-in-out;
 }
-.cartao_conteudo h3{
-    color: var(--card-front-color);
+
+.cartao_conteudo h3 {
+    color: #fff;
     border: 1px solid var(--text-color);
-    color: rgb(255, 255, 255);
     text-align: left;
     padding: 0.5rem;
     position: absolute;
-    margin: 0.6rem;border-radius: 0.6rem;
-    font-size: 1vw;
+    margin: 0.6rem;
+    border-radius: 0.6rem;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
     backface-visibility: hidden;
 }
-:root {
-    --text-color: #f6faff;
-    --card-front-color: #2b0be0;
-    --card-back-color: #000000;
-}
-.cartao_conteudo_pergunta p{
+
+.cartao_conteudo_pergunta p {
     color: var(--text-color);
     font-weight: 500;
 }
-.cartao_conteudo_resposta p{
+
+.cartao_conteudo_resposta p {
     color: var(--card-back-color);
     font-weight: 700;
 }
+
 .cartao:hover .cartao_conteudo {
     transform: rotateY(180deg);
 }
 
-.cartao_conteudo_pergunta, .cartao_conteudo_resposta {
+.cartao_conteudo_pergunta,
+.cartao_conteudo_resposta {
     backface-visibility: hidden;
     position: absolute;
     height: 100%;
     width: 100%;
 }
-.cartao_conteudo_resposta{
+
+.cartao_conteudo_resposta {
     transform: rotateY(180deg);
 }
 
-.cartao_conteudo p{
+.cartao_conteudo p {
     margin: 1rem;
     padding: 2rem;
     margin-top: 4rem;
